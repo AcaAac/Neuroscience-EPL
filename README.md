@@ -58,8 +58,9 @@ cd Neuroscience-EPL/Project1/LGBIO2072__Project_1.pdf
 This assignment involves the analysis of both neural and EMG data. The goal is to extract useful information about the kinematic movements and directional tuning of the arm. Specifically, for the neural data, we analyze the firing rate and extrapolate directional tuning based on the neural activity. For the muscle data, we correlate the EMG signals with hand kinetics data.
 
 # Navigate to the directory containing neural data
+```bash
 cd Neuroscience-EPL/Project2/loadDataP2/dataNeuron
-
+```
 Here you can start working with the neural data for firing rate analysis and directional tuning
 For example:
 Analyze firing rate and directional tuning with the neural data in the `dataNeuron` directory
