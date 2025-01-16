@@ -75,5 +75,6 @@ Load EMG signals and correlate them with hand movement kinematics
 cd Neuroscience-EPL/Project2/loadDataP2/P2.ipynb
 
 # Navigate to the report for Project 2
+```bash
 cd ../../LGBIO2072__Project_2.pdf
-
+```
