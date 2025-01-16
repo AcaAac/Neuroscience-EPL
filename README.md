@@ -6,7 +6,7 @@ This repository contains two project assignments for the Mathematical Models in 
 
 - [Project 1: Stochastic Optimal Control](#project-1-neuroscience)
   - [Description](#description)
-- [Project 2: EMG/Neural Data Analysis](#project-2-emg_neural-data-analysis)
+- [Project 2: EMG/Neural Data Analysis](#project-2-emg-neural-data-analysis)
   - [Description](#description)
 
 ## Project 1: Stochastic Optimal Control
@@ -15,30 +15,30 @@ This repository contains two project assignments for the Mathematical Models in 
 
 This assignment focuses on implementing a stochastic optimal control system to simulate the reaching movement of a patient with a two-jointed arm model. The control is based on a linear model with muscle dynamics, and the system is governed by the following equations:
 
-\[
+$$
 M(\theta)\ddot{\theta} + C(\theta, \dot{\theta}) + B\dot{\theta} = \tau
-\]
+$$
 
-\[
+$$
 \ddot{\theta} = M(\theta)^{-1} \left( \tau - C(\theta, \dot{\theta}) - B\dot{\theta} \right)
-\]
+$$
 
 Where:
-- \(\tau\) is the torque vector,
-- \(\theta_1\) and \(\theta_2\) are the shoulder and elbow angles,
-- \(M(\theta)\), \(C(\theta, \dot{\theta})\), and \(B\) are system matrices representing the dynamics of the arm.
+- $$\tau$$ is the torque vector,
+- $$\theta_1$$ and $$\theta_2$$ are the shoulder and elbow angles,
+- $$M(\theta)$$, $$C(\theta, \dot{\theta})$$, and $$B$$ are system matrices representing the dynamics of the arm.
 
-The mass matrix \(M(\theta)\), the Coriolis and centrifugal forces \(C(\theta, \dot{\theta})\), and the damping matrix \(B\) are provided as follows:
+The mass matrix $$M(\theta)$$, the Coriolis and centrifugal forces $$C(\theta, \dot{\theta})$$, and the damping matrix $$B$$ are provided as follows:
 
-\[
+$$
 M(\theta) = \begin{bmatrix} a_1 + 2a_2 \cos(\theta_2) & a_3 + a_2 \cos(\theta_2) \\ a_3 + a_2 \cos(\theta_2) & a_3 \end{bmatrix}
-\]
+$$
 
-\[
+$$
 C(\theta, \dot{\theta}) = \begin{bmatrix} -\dot{\theta_2}(2 \dot{\theta_1} + \dot{\theta_2}) \\ \dot{\theta_1} \end{bmatrix}
-\]
+$$
 
-Where \(a_1\), \(a_2\), and \(a_3\) are specific parameters based on the mechanical properties of the arm (mass, inertia, length), and \(B\) is a symmetric matrix of constant damping values.
+Where $$a_1$$, $$a_2$$, and $$a_3$$ are specific parameters based on the mechanical properties of the arm (mass, inertia, length), and $$B$$ is a symmetric matrix of constant damping values.
 
 The project also requires simulating the reaching movement of the arm towards different visual targets, considering perturbations and delays in the system.
 
@@ -48,6 +48,7 @@ The project report can be found in the following file:
 
 ```bash
 cd Neuroscience-EPL/Project1/LGBIO2072__Project_1.pdf
+
 ```
 
 ## Project 2: EMG/Neural Data Analysis
