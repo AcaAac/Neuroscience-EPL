@@ -65,15 +65,17 @@ For example:
 Analyze firing rate and directional tuning with the neural data in the `dataNeuron` directory
 
 # Navigate to the directory containing muscle data
+```bash
 cd ../dataMuscle
-
+```
 Here you can start working with the muscle EMG data to correlate with hand kinematics
 For example:
 Load EMG signals and correlate them with hand movement kinematics
 
 # If you want to run the code for Project 2:
+```bash
 cd Neuroscience-EPL/Project2/loadDataP2/P2.ipynb
-
+```
 # Navigate to the report for Project 2
 ```bash
 cd ../../LGBIO2072__Project_2.pdf
