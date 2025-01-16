@@ -6,78 +6,73 @@ This repository contains two project assignments for the Mathematical Models in 
 
 - [Project 1: Stochastic Optimal Control](#project-1-neuroscience)
   - [Description](#description)
-  - [Installation](#installation)
-  - [Problem Sheet](#problem-sheet)
-  - [Report](#report-1)
-- [Project 2: CNN](#project-2-emg_neural-data_analysis)
+- [Project 2: EMG/Neural Data Analysis](#project-2-emg_neural-data-analysis)
   - [Description](#description)
-  - [Installation](#installation)
-  - [Problem Sheet](#problem-sheet)
-  - [Report](#report-2)
 
 ## Project 1: Stochastic Optimal Control
 
 ### Description
 
-This assignment focuses on implementing a stochastic optimal control system to simulate the reaching movement of a patient. The project folder contains the problem sheet, the submitted code, and the detailed report.
+This assignment focuses on implementing a stochastic optimal control system to simulate the reaching movement of a patient with a two-jointed arm model. The control is based on a linear model with muscle dynamics, and the system is governed by the following equations:
 
-### Installation
+\[
+M(\theta)\ddot{\theta} + C(\theta, \dot{\theta}) + B\dot{\theta} = \tau
+\]
 
-To set up the environment for Project 1, follow these steps:
+\[
+\ddot{\theta} = M(\theta)^{-1} \left( \tau - C(\theta, \dot{\theta}) - B\dot{\theta} \right)
+\]
 
-```bash
-# Clone the repository
-git clone https://github.com/AcaAac/Neuroscience-EPL.git
+Where:
+- \(\tau\) is the torque vector,
+- \(\theta_1\) and \(\theta_2\) are the shoulder and elbow angles,
+- \(M(\theta)\), \(C(\theta, \dot{\theta})\), and \(B\) are system matrices representing the dynamics of the arm.
 
-# Navigate to the Project1 directory
-cd Neuroscience/Project1
+The mass matrix \(M(\theta)\), the Coriolis and centrifugal forces \(C(\theta, \dot{\theta})\), and the damping matrix \(B\) are provided as follows:
 
-# Access the submitted code
-P1_V8.ipynb
+\[
+M(\theta) = \begin{bmatrix} a_1 + 2a_2 \cos(\theta_2) & a_3 + a_2 \cos(\theta_2) \\ a_3 + a_2 \cos(\theta_2) & a_3 \end{bmatrix}
+\]
 
+\[
+C(\theta, \dot{\theta}) = \begin{bmatrix} -\dot{\theta_2}(2 \dot{\theta_1} + \dot{\theta_2}) \\ \dot{\theta_1} \end{bmatrix}
+\]
 
-```
+Where \(a_1\), \(a_2\), and \(a_3\) are specific parameters based on the mechanical properties of the arm (mass, inertia, length), and \(B\) is a symmetric matrix of constant damping values.
 
-## Problem Sheet
-```bash
-cd Neuroscience-EPL/Project1/Project_1_Stochastic_Optimal_Control
-```
+The project also requires simulating the reaching movement of the arm towards different visual targets, considering perturbations and delays in the system.
 
 ### Report
+
+The project report can be found in the following file:
+
 ```bash
 cd Neuroscience-EPL/Project1/LGBIO2072__Project_1.pdf
 ```
+
 ## Project 2: EMG/Neural Data Analysis
 
 ### Description
 
-This assignment involves data analysis of both EMG and Neural data to draw conclusions on kinematic hand data and directional tuning principles. The project folder includes the problem sheet, the submitted code, and the comprehensive report.
+This assignment involves the analysis of both neural and EMG data. The goal is to extract useful information about the kinematic movements and directional tuning of the arm. Specifically, for the neural data, we analyze the firing rate and extrapolate directional tuning based on the neural activity. For the muscle data, we correlate the EMG signals with hand kinetics data.
 
-### Installation
+# Navigate to the directory containing neural data
+cd Neuroscience-EPL/Project2/loadDataP2/dataNeuron
 
-To set up the environment for Project 2, follow these steps:
+Here you can start working with the neural data for firing rate analysis and directional tuning
+For example:
+Analyze firing rate and directional tuning with the neural data in the `dataNeuron` directory
 
-```bash
-# Clone the repository
-git clone https://github.com/AcaAac/Neuroscience-EPL.git
+# Navigate to the directory containing muscle data
+cd ../dataMuscle
 
-# Navigate to the Project2 directory
-cd Neuroscience-EPL/Project2/loadDataP2/loadDataP2
+Here you can start working with the muscle EMG data to correlate with hand kinematics
+For example:
+Load EMG signals and correlate them with hand movement kinematics
 
-# Access the submitted code
-P2.ipynb
+# If you want to run the code for Project 2:
+cd Neuroscience-EPL/Project2/loadDataP2/P2.ipynb
 
-# Muscle and Neuron data at
-cd Neuroscience-EPL/Project2/loadDataP2/loadDataP2/dataMuscle
-cd Neuroscience-EPL/Project2/loadDataP2/loadDataP2/dataNeuron
-```
+# Navigate to the report for Project 2
+cd ../../LGBIO2072__Project_2.pdf
 
-## Problem Sheet
-```bash
-cd Neuroscience-EPL/Project2/loadDataP2/project_2.pdf
-```
-
-### Report
-```bash
-cd Neuroscience-EPL/Project2/LGBIO2072__Project_2.pdf
-```
